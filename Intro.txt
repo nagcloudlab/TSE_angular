@@ -1,0 +1,18 @@
+
+
+--------------------------------------------------------------------------------
+
+UI = data + style + interaction/behavior
+WEB-UI = HTML + CSS + ( JS + Browser APIs e.g DOM, Fetch, Canvas, Web Workers, Service Workers, etc. )
+
+--------------------------------------------------------------------------------
+
+why do we need typescript?
+
+- typescript is a superset of javascript
+- typescript is a typed language
+- typescript is a compiled language
+- typescript is a language that compiles to javascript
+- typescript is a language that compiles to javascript that runs on the browser
+
+--------------------------------------------------------------------------------
