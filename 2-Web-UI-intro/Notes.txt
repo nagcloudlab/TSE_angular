@@ -1,0 +1,111 @@
+
+
+
+why do we need javascript on HTML-page?
+
+
+with browser's APIs , javascript can bring dynamic activities to page.
+
+browser' Apis => DOM, XHR/Fetch, Timer, ..
+
+
+using DOM API
+----------------
+- to create,retreive,update,delete elements on the page
+- to add event listeners to elements on the page
+- to change element's style
+- to change element's content
+- to change element's attributes/properties
+
+using XHR/Fetch API
+--------------------
+- to send requests to the server asynchronously
+
+using Timer API
+----------------
+- to execute some actions on timeout/timeinterval
+
+
+------------------------------------------------------------
+
+
+challenges while developing web-ui applications
+( plain-javascript with browser's apis )
+
+-> browser compatibility issues
+-> memory leaks
+-> performance issues
+-> code organization
+-> no re-usable UI fragments
+...
+
+
+------------------------------------------------------------
+
+legacy solutions to overcome above challenges
+
+-> using server-side page technologies
+
+    -> JSP
+    -> ASP.NET
+    -> PHP
+    -> ...
+
+problems with server-side page technologies
+
+-> on every request, server has to process the request and generate response ( HTML-page )
+   by keeping client's session/state
+-> on every request, server has to transfer same static-resources ( css,js,images,.. ) to client
+   that leads to network latency
+-> on every response, browser reloads entire page
+
+------------------------------------------------------------
+
+modern solutions to overcome above challenges
+
+-> using client-side page technologies
+
+    How ?
+
+    -> Modern browser with good APis
+    -> Modern javascript-language
+
+    +
+
+    -> JS Libraries + JS Frameworks from third-parties
+
+------------------------------------------------------------    
+
+JS Libraries + Frameworks
+---------------------------
+
+    1. Jquery.js  ( DOM & XHR utility library )
+
+
+  MVC pattern based JS Frameworks
+
+    2. Backbone.js
+    3. Knockout.js
+    4. Dojo
+    5. Ext JS from sencha ( commericial )
+    6. Angular.js ( from google )
+    7. Ember.js
+    
+
+  Component pattern based JS Frameworks
+
+    How to create components ?
+
+    1. React.js ( from facebook )
+    2. Angular ( from google )           -> our-focus
+    3. Vue.js
+    4. Polymer.js ( from google )
+    5. Web Components ( from W3C )
+
+
+------------------------------------------------------------
+
+
+
+
+
