@@ -15,6 +15,8 @@ export class ProductListComponent {
       id: 1,
       name: 'laptop',
       price: 2000,
+      currencyCode: 'INR',
+      makeDate: Date.now(),
       isAvailable: true,
       description: 'laptop description',
       image: 'assets/img/Laptop.png'
@@ -23,6 +25,8 @@ export class ProductListComponent {
       id: 2,
       name: 'mobile',
       price: 1000,
+      currencyCode: 'INR',
+      makeDate: Date.now(),
       isAvailable: true,
       description: 'mobile description',
       image: 'assets/img/Mobile.png'

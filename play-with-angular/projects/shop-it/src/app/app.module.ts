@@ -9,6 +9,7 @@ import { ProductComponent } from './product/product.component';
 import { ReviewComponent } from './review/review.component';
 import { CartBadgeComponent } from './cart-badge/cart-badge.component';
 import { CartTableComponent } from './cart-table/cart-table.component';
+import { DiscountPipe } from './discount.pipe';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,9 @@ import { CartTableComponent } from './cart-table/cart-table.component';
     ProductComponent,
     ReviewComponent,
     CartBadgeComponent,
-    CartTableComponent
+    CartTableComponent,
     // pipe(s)
+    DiscountPipe
   ],
   imports: [
     // can import other module(s)

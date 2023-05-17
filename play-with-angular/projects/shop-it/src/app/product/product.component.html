@@ -3,8 +3,9 @@
         <img [src]="product.image" class="img-fluid" alt="" />
     </div>
     <div class="col-8">
-        <div>{{product.name}}</div>
-        <div>{{product.price}}</div>
+        <!-- {{product|json}} -->
+        <div>{{product.name| uppercase}} - {{product.makeDate|date:'yyyy'}}</div>
+        <div>{{product.price | discount | currency:product.currencyCode:'symbol'}}</div>
         <button (click)="handleBuy($event)" [disabled]="!product.isAvailable" class="btn btn-dark">Buy</button>
         <br />
         <ul class="nav nav-tabs">
