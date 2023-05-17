@@ -1,0 +1,15 @@
+<div class="voting-item">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-around">
+                <div class="display-4">{{value}}</div>
+                <!-- <div class="display-6">0</div> -->
+            </div>
+            <hr />
+            <div class="d-flex justify-content-around">
+                <button (click)="handleLike($event)" class="btn btn-success">Like</button>
+                <button (click)="handleDislike($event)" class="btn btn-danger">Dislike</button>
+            </div>
+        </div>
+    </div>
+</div>

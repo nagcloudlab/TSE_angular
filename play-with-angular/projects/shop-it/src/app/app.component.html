@@ -5,6 +5,7 @@
   <div class="list-group">
     <div class="list-group-item" *ngFor="let product of products; let i = index">
       <div>
+        {{i}}
         <div class="row">
           <div class="col-4">
             <img [src]="product.image" class="img-fluid" alt="" />

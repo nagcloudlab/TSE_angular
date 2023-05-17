@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header">VotingApp</div>
+    <div class="card-body">
+        <div class="d-flex justify-content-around flex-wrap">
+            <div *ngFor="let item of votingItems">
+                <app-voting-item [value]="item" (vote)="handleVote($event)" />
+            </div>
+        </div>
+        <hr />
+        <app-voting-table [value]="votingLines"></app-voting-table>
+    </div>
+</div>
