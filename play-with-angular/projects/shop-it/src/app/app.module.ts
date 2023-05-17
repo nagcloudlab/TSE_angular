@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
 import { ReviewComponent } from './review/review.component';
+import { CartBadgeComponent } from './cart-badge/cart-badge.component';
+import { CartTableComponent } from './cart-table/cart-table.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ReviewComponent } from './review/review.component';
     HeaderComponent,
     ProductListComponent,
     ProductComponent,
-    ReviewComponent
+    ReviewComponent,
+    CartBadgeComponent,
+    CartTableComponent
     // pipe(s)
   ],
   imports: [

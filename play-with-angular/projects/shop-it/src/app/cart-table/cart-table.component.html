@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">Cart Table</div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cartLine of cart">
+                    <td>{{cartLine.name}}</td>
+                    <td>{{cartLine.qty}}</td>
+                    <td>{{cartLine.price}}</td>
+                    <td>{{cartLine.qty * cartLine.price}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">{{time}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
