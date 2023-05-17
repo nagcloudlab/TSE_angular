@@ -2,7 +2,7 @@
     <div class="list-group-item" *ngFor="let product of products; let i = index">
         <div>
             {{i}}
-            <app-product [value]="product" (buy)="handleBuy($event)"></app-product>
+            <app-product [value]="product"></app-product>
         </div>
     </div>
 </div>

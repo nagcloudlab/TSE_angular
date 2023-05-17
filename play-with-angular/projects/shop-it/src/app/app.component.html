@@ -1,7 +1,7 @@
 <div class="container">
 
   <app-header title="shop-IT"></app-header>
-  <app-cart-badge [value]="cart.length"></app-cart-badge>
+  <app-cart-badge></app-cart-badge>
   <ul class="nav nav-pills">
     <li class="nav-item">
       <a class="nav-link" href="/" (click)="toggleCartView($event)">
@@ -10,7 +10,7 @@
     </li>
   </ul>
   <hr />
-  <app-cart-table *ngIf="isCartOpen" [value]="cart"></app-cart-table>
-  <app-product-list *ngIf="!isCartOpen" (buy)="handleBuy($event)"></app-product-list>
+  <app-cart-table *ngIf="isCartOpen"></app-cart-table>
+  <app-product-list *ngIf="!isCartOpen"></app-product-list>
 
 </div>

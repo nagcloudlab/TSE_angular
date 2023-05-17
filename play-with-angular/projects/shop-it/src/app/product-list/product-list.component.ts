@@ -7,8 +7,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ProductListComponent {
 
-  @Output()
-  buy = new EventEmitter<any>();
 
   products: Array<any> = [
     {
@@ -33,8 +31,5 @@ export class ProductListComponent {
     }
   ]
 
-  handleBuy(event: any) {
-    this.buy.emit(event);
-  }
 
 }

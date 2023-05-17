@@ -1,4 +1,5 @@
 import { Component, Input, SimpleChange } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-cart-table',
@@ -7,13 +8,12 @@ import { Component, Input, SimpleChange } from '@angular/core';
 })
 export class CartTableComponent {
 
-  @Input("value")
   cart!: Array<any>;
 
   time: string = new Date().toLocaleTimeString();
   intervalId: any
 
-  constructor() {
+  constructor(private cartService: CartService) {
     console.log("CartTableComponent: constructor");
     console.log(this.cart);
     // why we need this?
@@ -36,6 +36,7 @@ export class CartTableComponent {
       console.log("tick");
       this.time = new Date().toLocaleTimeString();
     }, 1000);
+    this.cart = this.cartService.getCart();
   }
 
   ngOnDestroy() {
