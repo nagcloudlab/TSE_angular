@@ -36,7 +36,7 @@ export class CartTableComponent {
       console.log("tick");
       this.time = new Date().toLocaleTimeString();
     }, 1000);
-    this.cart = this.cartService.getCart();
+    this.cart = this.cartService.cart
   }
 
   ngOnDestroy() {

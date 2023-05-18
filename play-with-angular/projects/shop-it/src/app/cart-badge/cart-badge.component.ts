@@ -17,7 +17,7 @@ export class CartBadgeComponent {
 
   ngOnInit() {
     console.log("CartBadgeComponent: ngOnInit()");
-    this.cartService.getCartStream()
+    this.cartService.$cart
       .subscribe({
         next: cart => {
           this.value = cart.length;

@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs'
 })
 export class CartService {
 
-  private cart: Array<any> = [];
-  private cartStream = new BehaviorSubject<Array<any>>(this.cart);
+  public cart: Array<any> = [];
+  public $cart = new BehaviorSubject<Array<any>>(this.cart);
 
   constructor() { }
 
@@ -18,15 +18,11 @@ export class CartService {
       return
     let cartLine = { ...product, qty: 1 }
     this.cart = this.cart.concat(cartLine) // immutable array
-    this.cartStream.next(this.cart)
+    this.$cart.next(this.cart)
   }
 
-  getCart(): Array<any> {
-    return this.cart;
-  }
-  getCartStream(): BehaviorSubject<Array<any>> {
-    return this.cartStream;
-  }
+
+
 
 
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartService } from '../cart.service';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product',
@@ -12,18 +13,23 @@ export class ProductComponent {
   product: any = {}
 
   currentTab: number = 1;
-  reviews: Array<any> = [
-    { stars: 3, comment: "good one", author: 'who-1' },
-    { stars: 2, comment: "bad one", author: 'who-2' }
-  ];
+  reviews: Array<any> = [];
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private productsService: ProductsService
   ) { }
 
   handleTabChange(event: MouseEvent, tabIndex: number) {
     event.preventDefault();
     this.currentTab = tabIndex;
+    if (this.currentTab === 3) {
+      this.productsService.getReviews(this.product.id).subscribe({
+        next: reviews => {
+          this.reviews = reviews;
+        }
+      })
+    }
   }
   handleBuy(event: MouseEvent) {
     this.cartService.addToCart(this.product);

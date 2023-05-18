@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,29 +8,18 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ProductListComponent {
 
+  products: Array<any> = []
 
-  products: Array<any> = [
-    {
-      id: 1,
-      name: 'laptop',
-      price: 2000,
-      currencyCode: 'INR',
-      makeDate: Date.now(),
-      isAvailable: true,
-      description: 'laptop description',
-      image: 'assets/img/Laptop.png'
-    },
-    {
-      id: 2,
-      name: 'mobile',
-      price: 1000,
-      currencyCode: 'INR',
-      makeDate: Date.now(),
-      isAvailable: true,
-      description: 'mobile description',
-      image: 'assets/img/Mobile.png'
-    }
-  ]
+  constructor(
+    private productsService: ProductsService
+  ) { }
+
+  ngOnInit() {
+    this.productsService.getProducts()
+      .subscribe((products) => {
+        this.products = products
+      })
+  }
 
 
 }

@@ -1,0 +1,48 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Laptop",
+            "price": 2000,
+            "currencyCode": "INR",
+            "isAvailable": true,
+            "image": "assets/img/Laptop.png",
+            "description": "Laptop 1 description"
+        },
+        {
+            "id": 2,
+            "name": "Mobile",
+            "price": 2000,
+            "currencyCode": "INR",
+            "isAvailable": true,
+            "image": "assets/img/Mobile.png",
+            "description": "Laptop 1 description"
+        }
+    ],
+    "reviews": {
+        "1": [
+            {
+                "name": "Who-1",
+                "ratings": 5,
+                "text": "I love this"
+            },
+            {
+                "name": "Who-2",
+                "ratings": 3,
+                "text": "I hate this"
+            }
+        ],
+        "2": [
+            {
+                "name": "Who-1",
+                "ratings": 5,
+                "text": "I love this mobile"
+            },
+            {
+                "name": "Who-2",
+                "ratings": 3,
+                "text": "I hate this mobile"
+            }
+        ]
+    }
+}
