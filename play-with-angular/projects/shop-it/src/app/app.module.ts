@@ -11,6 +11,7 @@ import { ReviewComponent } from './review/review.component';
 import { CartBadgeComponent } from './cart-badge/cart-badge.component';
 import { CartTableComponent } from './cart-table/cart-table.component';
 import { DiscountPipe } from './discount.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DiscountPipe } from './discount.pipe';
     CartBadgeComponent,
     CartTableComponent,
     // pipe(s)
-    DiscountPipe
+    DiscountPipe,
+    HighlightDirective
   ],
   imports: [
     // can import other module(s)

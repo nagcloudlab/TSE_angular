@@ -12,6 +12,8 @@ export class ProductComponent {
   @Input("value")
   product: any = {}
 
+  highlightColor = "#DEF"
+
   currentTab: number = 1;
   reviews: Array<any> = [];
 
