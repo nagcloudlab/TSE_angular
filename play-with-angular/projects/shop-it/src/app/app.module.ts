@@ -12,6 +12,8 @@ import { CartBadgeComponent } from './cart-badge/cart-badge.component';
 import { CartTableComponent } from './cart-table/cart-table.component';
 import { DiscountPipe } from './discount.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { ReviewFormComponent } from './review-form/review-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { HighlightDirective } from './highlight.directive';
     CartTableComponent,
     // pipe(s)
     DiscountPipe,
-    HighlightDirective
+    HighlightDirective,
+    ReviewFormComponent
   ],
   imports: [
     // can import other module(s)
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     // service(s)

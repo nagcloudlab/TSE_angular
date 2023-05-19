@@ -36,6 +36,15 @@ export class ProductComponent {
   handleBuy(event: MouseEvent) {
     this.cartService.addToCart(this.product);
   }
+  handleNewReview(review: any) {
+    this.productsService.postNewReview(this.product.id, review)
+      .subscribe({
+        next: review => {
+          debugger;
+          this.reviews.push(review);
+        }
+      })
+  }
   isTabSelected(tabIndex: number): boolean {
     return this.currentTab === tabIndex;
   }

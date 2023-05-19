@@ -21,5 +21,11 @@ export class ProductsService {
     return this._http.get(`${this.API_URL}/reviews`)
       .pipe(map((reviews: any) => reviews[productId]))
   }
+  postNewReview(productId: number, review: any): Observable<any> {
+    return new Observable((observer) => {
+      // this._http.post(`${this.API_URL}/reviews`, review)
+      observer.next(review)
+    })
+  }
 
 }
