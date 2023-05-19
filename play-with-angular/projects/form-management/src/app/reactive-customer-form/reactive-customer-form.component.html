@@ -6,27 +6,78 @@
                 <form (submit)="handleSubmit($event)" [formGroup]="customerForm">
                     <div class="form-group">
                         <label class="form-control-label" for="firstName">First Name</label>
-                        <input formControlName="firstName" type="text" class="form-control" name="firstName"
-                            name="firstName">
-                        <div class="text-danger">
-                            <span
-                                *ngIf="customerForm.controls['firstName'].invalid && customerForm.controls['firstName'].touched">
-                                First Name is required
-                            </span>
-                        </div>
+                        <input formControlName="firstName" class="form-control">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="firstName">Last Name</label>
-                        <input formControlName="lastName" type="text" class="form-control" name="lastName"
-                            name="lastName">
+                        <input formControlName="lastName" class="form-control">
+                        <!-- <div class="text-danger"
+                            *ngIf="customerForm.get('lastName')?.invalid && customerForm.get('lastName')?.touched">
+                            <span *ngIf="customerForm.get('lastName')?.errors.required">
+                                LastName is Required
+                            </span>
+                            <span *ngIf="customerForm.get('lastName')?.errors.minlength">
+                                LastName Min 3 chars required
+                            </span>
+                        </div> -->
+                        <div class="text-danger">
+                            {{errors['lastName']}}
+                        </div>
                     </div>
-                    <br />
-                    <button (click)="handleClear()" type="button" class="btn btn-dark">Clear</button>
+                    <div class="form-group">
+                        <label class="form-control-label" for="email">Email</label>
+                        <input formControlName="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="email">Mobile</label>
+                        <input formControlName="mobile" class="form-control">
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label class="form-control-label" for="email">Notification</label> :
+                        <input (click)="handleNotiChange('email')" formControlName="notification" type="radio"
+                            value="email"> Email
+                        <input (click)="handleNotiChange('sms')" formControlName="notification" type="radio"
+                            value="sms"> SMS
+                    </div>
+                    <div formArrayName="addressFormArray">
+                        <div class="card" *ngFor="let group of addressFormArray.controls;let i=index"
+                            [formGroup]="group">
+                            <div class="card-header">Address - {{i}} <button (click)="handleRemoveAddress(i)"
+                                    class="btn btn-sm btn-danger">-</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Street</label>
+                                    <input formControlName="street" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="email">City</label>
+                                    <input formControlName="city" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">State</label>
+                                    <input formControlName="state" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Zip</label>
+                                    <input formControlName="zip" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="">Country</label>
+                                    <input formControlName="country" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <button (click)="handleNewAddress()" class="btn btn-sm btn-dark">+</button>
+                    <hr />
+                    <button (click)="handleClear()" type="button" class="btn btn-warning">Clear</button>
                     &nbsp;
                     <button (click)="handleLoad()" type="button" class="btn btn-dark">Load</button>
                     &nbsp;
-                    <button type="submit" class="btn btn-dark">submit</button>
-
+                    <button type="submit" class="btn btn-primary">submit</button>
                 </form>
             </div>
         </div>
