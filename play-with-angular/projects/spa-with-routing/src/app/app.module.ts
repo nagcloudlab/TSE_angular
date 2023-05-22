@@ -10,6 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsResolver } from './products.resolver';
 import { ReactiveFormsModule } from '@angular/forms';
+import { newProductGuard } from './new-product.guard';
+import { productFormCancelGuard } from './product-form-cancel.guard';
+import { productViewGuard } from './product-view.guard';
 
 
 const routes: Routes = [
@@ -19,25 +22,28 @@ const routes: Routes = [
   },
   {
     path: 'products',
+    component: ProductTableComponent,
     resolve: {
       allProducts: ProductsResolver
     },
-    component: ProductTableComponent,
+    canActivateChild: [productViewGuard],
     children: [
-      // {
-      //   path: ':id',
-      //   component: ProductViewComponent
-      // },
+      {
+        path: ':id',
+        component: ProductViewComponent
+      },
     ]
   },
   {
-    path: 'products/:id',
-    component: ProductViewComponent
-  },
-  {
     path: 'products/new',
-    component: ProductFormComponent
+    component: ProductFormComponent,
+    canActivate: [newProductGuard],
+    canDeactivate: [productFormCancelGuard]
   },
+  // {
+  //   path: 'products/:id',
+  //   component: ProductViewComponent
+  // },
   {
     path: 'products/:id/edit',
     component: ProductFormComponent
@@ -58,7 +64,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes, {
-      enableTracing: true
+      enableTracing: false
     })
   ],
   providers: [],

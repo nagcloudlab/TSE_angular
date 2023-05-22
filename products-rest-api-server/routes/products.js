@@ -35,7 +35,9 @@ router.get("/:id", function (req, res, next) {
   res.json(product);
 });
 router.post("/", function (req, res, next) {
-  products.push(req.body);
+  let product = req.body;
+  product.id = products.length + 1;
+  products.push(product);
   res.json(req.body);
 });
 router.put("/:id", function (req, res, next) {
@@ -57,4 +59,38 @@ router.delete("/:id", function (req, res, next) {
   products.splice(products.indexOf(product), 1);
   res.json(product);
 });
+
+const reviews = {
+  1: [
+    {
+      ratings: 5,
+      text: "This is a very good review",
+      name: "John Doe",
+    },
+    {
+      ratings: 1,
+      text: "This is a very bad review",
+      name: "Nag",
+    },
+  ],
+  2: [
+    {
+      ratings: 5,
+      text: "This is a very good review",
+      name: "John Doe",
+    },
+  ],
+};
+
+router.get("/:id/reviews", function (req, res, next) {
+  let productId = req.params.id;
+  res.json(reviews[productId]);
+});
+router.post("/:id/reviews", function (req, res, next) {
+  let productId = req.params.id;
+  let review = req.body;
+  reviews[productId].push(review);
+  res.json(review);
+});
+
 module.exports = router;

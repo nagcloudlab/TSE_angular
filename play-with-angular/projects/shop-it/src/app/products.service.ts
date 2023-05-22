@@ -8,24 +8,20 @@ import { map } from 'rxjs/operators';
 })
 export class ProductsService {
 
-  API_URL = "http://localhost:8080"
+  API_URL = "http://localhost:8080/api/products"
 
   constructor(
     private _http: HttpClient
   ) { }
 
   getProducts(): Observable<any> {
-    return this._http.get(`${this.API_URL}/products`)
+    return this._http.get(`${this.API_URL}`)
   }
   getReviews(productId: number): Observable<any> {
-    return this._http.get(`${this.API_URL}/reviews`)
-      .pipe(map((reviews: any) => reviews[productId]))
+    return this._http.get(`${this.API_URL}/${productId}/reviews`)
   }
   postNewReview(productId: number, review: any): Observable<any> {
-    return new Observable((observer) => {
-      // this._http.post(`${this.API_URL}/reviews`, review)
-      observer.next(review)
-    })
+    return this._http.post(`${this.API_URL}/${productId}/reviews`, review)
   }
 
 }

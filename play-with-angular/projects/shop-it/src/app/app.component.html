@@ -4,13 +4,17 @@
   <app-cart-badge></app-cart-badge>
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a class="nav-link" href="/" (click)="toggleCartView($event)">
-        {{isCartOpen?'Products':"Cart"}}
+      <a class="nav-link" routerLink="products">
+        Products
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="cart">
+        Cart
       </a>
     </li>
   </ul>
   <hr />
-  <app-cart-table *ngIf="isCartOpen"></app-cart-table>
-  <app-product-list *ngIf="!isCartOpen"></app-product-list>
+  <router-outlet></router-outlet>
 
 </div>

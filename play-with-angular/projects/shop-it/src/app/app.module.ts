@@ -14,6 +14,24 @@ import { DiscountPipe } from './discount.pipe';
 import { HighlightDirective } from './highlight.directive';
 import { ReviewFormComponent } from './review-form/review-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: "products"
+  },
+  {
+    path: 'products',
+    component: ProductListComponent,
+  },
+  {
+    path: 'cart',
+    component: CartTableComponent,
+  }
+]
 
 @NgModule({
   declarations: [
@@ -34,7 +52,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     // can import other module(s)
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     // service(s)

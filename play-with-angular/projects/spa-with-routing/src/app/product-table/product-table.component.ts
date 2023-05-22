@@ -31,4 +31,12 @@ export class ProductTableComponent {
 
   }
 
+  handleDelete(id: number, event: MouseEvent) {
+    event.preventDefault();
+    this.productsService.deleteProduct(id)
+      .subscribe(() => {
+        this.products = this.products.filter(product => product.id !== id);
+      })
+  }
+
 }

@@ -29,22 +29,30 @@ export class ProductFormComponent {
     });
     this.route.params.subscribe(params => {
       this.productId = params['id'];
-      this.productsService.getProduct(this.productId).subscribe(product => {
-        this.product = product;
-        this.productForm.patchValue({
-          name: product.name,
-          price: product.price,
-          description: product.description
+      if (this.productId) {
+        this.productsService.getProduct(this.productId).subscribe(product => {
+          this.product = product;
+          this.productForm.patchValue({
+            name: product.name,
+            price: product.price,
+            description: product.description
+          });
         });
-      });
+      }
     })
   }
 
   handleSubmit(event: SubmitEvent) {
     event.preventDefault();
-    this.productsService.updateProduct(this.productId, { ...this.product, ...this.productForm.value }).subscribe(() => {
-      this.router.navigate(['/products']);
-    });
+    if (this.productId) {
+      this.productsService.updateProduct(this.productId, { ...this.product, ...this.productForm.value }).subscribe(() => {
+        this.router.navigate(['/products']);
+      });
+    } else {
+      this.productsService.createProduct({ ...this.productForm.value }).subscribe(() => {
+        this.router.navigate(['/products']);
+      });
+    }
   }
 
 }
