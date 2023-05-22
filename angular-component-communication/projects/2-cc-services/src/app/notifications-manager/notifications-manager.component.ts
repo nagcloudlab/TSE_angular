@@ -9,6 +9,7 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./notifications-manager.component.scss'],
 })
 export class NotificationsManagerComponent implements OnInit {
+
   notificationsCount$!: Observable<number>;
   constructor(private notificationsService: NotificationsService) { }
 
@@ -17,7 +18,9 @@ export class NotificationsManagerComponent implements OnInit {
   }
 
   getCountValue(callback: any) {
-    this.notificationsCount$.pipe(first()).subscribe(callback);
+    this.notificationsCount$
+      .pipe(first())
+      .subscribe(callback);
   }
 
   addNotification() {

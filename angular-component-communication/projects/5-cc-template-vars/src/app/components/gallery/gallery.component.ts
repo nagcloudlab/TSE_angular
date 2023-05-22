@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
+
   pictures: string[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,7 +16,7 @@ export class GalleryComponent implements OnInit {
   }
 
   generateImage() {
-    return `https://picsum.photos/200/200?ts${Math.random()*30 + 1}`;
+    return `https://picsum.photos/200/200?ts${Math.random() * 30 + 1}`;
   }
 
 }

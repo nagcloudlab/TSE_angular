@@ -6,7 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./vc-logs.component.scss'],
 })
 export class VcLogsComponent implements OnInit {
+
   _vName: any;
+
   @Input()
   get vName() {
     return this._vName;
