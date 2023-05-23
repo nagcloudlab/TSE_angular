@@ -13,6 +13,7 @@ export class BucketComponent implements OnInit {
   $bucket!: Observable<IFruit[]>;
   selectedFruit: Fruit | null = null
   fruits: string[] = Object.values(Fruit);
+
   constructor(private bucketService: BucketService) { }
 
   ngOnInit(): void {

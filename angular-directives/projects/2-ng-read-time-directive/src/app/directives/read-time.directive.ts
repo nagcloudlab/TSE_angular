@@ -15,10 +15,13 @@ export interface ReadTimeConfig {
   selector: '[appReadTime]',
 })
 export class ReadTimeDirective implements OnInit {
+
   @Input() configuration: ReadTimeConfig = {
     wordsPerMinute: 200,
   };
+
   @Output() readTimeCalculated = new EventEmitter<string>();
+
   constructor(private el: ElementRef) { }
 
   ngOnInit() {

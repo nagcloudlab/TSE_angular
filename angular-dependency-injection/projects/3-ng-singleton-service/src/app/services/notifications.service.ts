@@ -8,6 +8,11 @@ export class NotificationsService {
   private count: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   count$: Observable<number> = this.count.asObservable();
+
+  // constructor() {
+  //   console.log("NotificationsService::constructor()");
+  // }
+
   constructor(@Optional() @SkipSelf() existingService: NotificationsService) {
     if (existingService) {
       throw Error(

@@ -10,8 +10,8 @@ export enum HighlightColor {
   selector: '[appHighlight]'
 })
 export class HighlightDirective implements OnChanges {
-  @Input() highlightText = '';
-  @Input() highlightColor: HighlightColor = HighlightColor.Yellow;
+  @Input() highlightText = ''; // string
+  @Input() highlightColor: HighlightColor = HighlightColor.Yellow
   originalHTML = '';
   constructor(private el: ElementRef) { }
 

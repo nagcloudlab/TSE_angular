@@ -11,7 +11,7 @@ export class UserService {
       lastName: 'N',
     },
   ];
-  constructor(@Inject(GREETER) public greeter: typeof Greeter) { }
+  constructor(@Inject(GREETER) private greeter: typeof Greeter) { }
 
   getUser() {
     const user = this.users[Math.floor(Math.random() * this.users.length)];

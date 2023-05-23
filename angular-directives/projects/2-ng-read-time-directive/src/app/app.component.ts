@@ -9,6 +9,10 @@ export class AppComponent {
 
   readTime!: string;
 
+  configuration = {
+    wordsPerMinute: 100
+  }
+
   onReadTimeCalculated(readTimeStr: string) {
     this.readTime = readTimeStr;
   }

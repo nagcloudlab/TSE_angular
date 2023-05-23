@@ -1,7 +1,11 @@
 
 import { User } from '../interfaces/user.interface';
-import { InjectionToken } from '@angular/core';
+import { Injectable, InjectionToken } from '@angular/core';
 
+
+// @Injectable({
+//   providedIn: 'root'
+// })
 export class Greeter implements User {
   firstName;
   lastName;

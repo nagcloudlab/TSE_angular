@@ -7,7 +7,7 @@ export class IfNotDirective {
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainerRef: ViewContainerRef
-  ) {}
+  ) { }
   @Input() set appIfNot(value: boolean) {
     if (value === false) {
       this.viewContainerRef.createEmbeddedView(this.templateRef);

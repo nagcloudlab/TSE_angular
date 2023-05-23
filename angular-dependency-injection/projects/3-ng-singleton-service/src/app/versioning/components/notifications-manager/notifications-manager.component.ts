@@ -6,7 +6,7 @@ import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-notifications-manager',
   templateUrl: './notifications-manager.component.html',
-  styleUrls: ['./notifications-manager.component.scss']
+  styleUrls: ['./notifications-manager.component.scss'],
 })
 export class NotificationsManagerComponent implements OnInit {
   notificationsCount$!: Observable<number>;

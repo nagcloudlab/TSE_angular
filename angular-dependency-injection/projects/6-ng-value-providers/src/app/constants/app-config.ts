@@ -6,6 +6,8 @@ export interface IAppConfig {
 
 export const APP_CONFIG = new InjectionToken<IAppConfig>('APP_CONFIG');
 
+
+// 
 export const AppConfig: IAppConfig = {
   canDeleteItems: true,
 };

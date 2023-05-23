@@ -548,6 +548,97 @@
           }
         }
       }
+    },
+    "7-di-recap": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/7-di-recap",
+      "sourceRoot": "projects/7-di-recap/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/7-di-recap",
+            "index": "projects/7-di-recap/src/index.html",
+            "main": "projects/7-di-recap/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/7-di-recap/tsconfig.app.json",
+            "assets": [
+              "projects/7-di-recap/src/favicon.ico",
+              "projects/7-di-recap/src/assets"
+            ],
+            "styles": [
+              "projects/7-di-recap/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "7-di-recap:build:production"
+            },
+            "development": {
+              "browserTarget": "7-di-recap:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "7-di-recap:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/7-di-recap/tsconfig.spec.json",
+            "assets": [
+              "projects/7-di-recap/src/favicon.ico",
+              "projects/7-di-recap/src/assets"
+            ],
+            "styles": [
+              "projects/7-di-recap/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   }
 }
