@@ -366,6 +366,97 @@
           }
         }
       }
+    },
+    "mini-bytes": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/mini-bytes",
+      "sourceRoot": "projects/mini-bytes/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mini-bytes",
+            "index": "projects/mini-bytes/src/index.html",
+            "main": "projects/mini-bytes/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/mini-bytes/tsconfig.app.json",
+            "assets": [
+              "projects/mini-bytes/src/favicon.ico",
+              "projects/mini-bytes/src/assets"
+            ],
+            "styles": [
+              "projects/mini-bytes/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "mini-bytes:build:production"
+            },
+            "development": {
+              "browserTarget": "mini-bytes:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mini-bytes:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/mini-bytes/tsconfig.spec.json",
+            "assets": [
+              "projects/mini-bytes/src/favicon.ico",
+              "projects/mini-bytes/src/assets"
+            ],
+            "styles": [
+              "projects/mini-bytes/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   }
 }

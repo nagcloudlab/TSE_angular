@@ -15,6 +15,8 @@ import { HighlightDirective } from './highlight.directive';
 import { ReviewFormComponent } from './review-form/review-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { DeloitteCardComponent } from './deloitte-card/deloitte-card.component';
+import { SearchFormComponent } from './search-form/search-form.component';
 
 
 const routes: Routes = [
@@ -46,7 +48,9 @@ const routes: Routes = [
     // pipe(s)
     DiscountPipe,
     HighlightDirective,
-    ReviewFormComponent
+    ReviewFormComponent,
+    DeloitteCardComponent,
+    SearchFormComponent
   ],
   imports: [
     // can import other module(s)

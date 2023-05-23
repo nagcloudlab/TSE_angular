@@ -1,6 +1,6 @@
-<div class="card">
-    <div class="card-header">Review Form</div>
-    <div class="card-body">
+<app-deloitte-card>
+    <div class="header">Review Form</div>
+    <div class="body">
         <form [formGroup]="reviewForm" (submit)="handleSubmit($event)">
             <div class="form-group">
                 <label class="form-control-label">Ratings</label>
@@ -20,4 +20,4 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-</div>
+</app-deloitte-card>

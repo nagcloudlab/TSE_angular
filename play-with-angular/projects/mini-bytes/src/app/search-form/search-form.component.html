@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header bg-warning">
+        Search Form
+    </div>
+    <div class="card-body">
+        <form [formGroup]="searchForm" (submit)="handleSubmit($event)">
+            <div formGroupName="minMax">
+                <div class="form-group">
+                    <label>Min</label>
+                    <input formControlName="min" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Max</label>
+                    <input formControlName="max" type="number" class="form-control">
+                </div>
+            </div>
+            <div formGroupName="startEndDate">
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input formControlName="startDate" type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>End Date</label>
+                    <input formControlName="endDate" type="date" class="form-control">
+                </div>
+            </div>
+            <hr />
+            <button type="submit" class="btn btn-primary">Search</button>
+            <hr />
+        </form>
+
+    </div>
+</div>

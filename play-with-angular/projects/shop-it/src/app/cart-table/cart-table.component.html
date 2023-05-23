@@ -1,6 +1,6 @@
-<div class="card">
-    <div class="card-header">Cart Table</div>
-    <div class="card-body">
+<app-deloitte-card>
+    <div class="header">Cart Table</div>
+    <div class="body">
         <table class="table">
             <thead>
                 <tr>
@@ -14,7 +14,7 @@
                 <tr *ngFor="let cartLine of cart" appHighlight>
                     <td>{{cartLine.name}}</td>
                     <td>{{cartLine.qty}}</td>
-                    <td>{{cartLine.price}}</td>
+                    <td>{{cartLine.price|current:'INR'}}</td>
                     <td>{{cartLine.qty * cartLine.price}}</td>
                 </tr>
             </tbody>
@@ -25,4 +25,4 @@
             </tfoot>
         </table>
     </div>
-</div>
+</app-deloitte-card>

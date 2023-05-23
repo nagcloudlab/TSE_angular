@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header" #viewHeader>
+        <ng-content select=".header"></ng-content>
+    </div>
+    <div class="card-body">
+        <!-- DOM Elements ( i.e HTM elements ) -->
+        <p #p>box works!</p>
+        <p #p>box works!</p>
+        <!-- Angular Elements ( i,e Other components ) -->
+        <app-item #i></app-item>
+        <app-item></app-item>
+        <hr />
+        <ng-content selector=".body"></ng-content>
+    </div>
+    <div class="card-footer">
+        <ng-content select=".footer"></ng-content>
+    </div>
+</div>
