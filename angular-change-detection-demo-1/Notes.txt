@@ -1,0 +1,59 @@
+
+
+
+
+how to run javascript-programs?
+
+    => javascript runtime / engine
+
+browser(s)
+
+    - chrome   ( v8 -> c++ )
+    - firefox  ( Rhino / Spider-Monkey -> java )
+    - IE/Edge  ( chakra )
+    - Safari   ( Nitro )
+
+other envi
+
+    - Node.js  ( v8 )
+    - JVM      ( Rhino / Nashorn )
+    - Apache couchDB
+    ....
+
+
+spec : ECMAScript spec
+
+
+Browser  / Node.js:
+
+    1. javascript engine
+
+            - single-call-stack
+            - heap
+
+    2. browser apis ( DOM ,  XHR , Timer , HTML-5 Apis)  : event producers
+
+    3. Event/Message/Callback-Queue
+
+    4. Evet-Loop
+
+----------------------------------------------------
+
+
+
+MicroTask
+
+context - Zone
+
+        - sync 
+        - async1 . http-call => xhr  , 5s
+        - async2 . sit , 3s
+        - sync
+
+8s
+taskEmty ->  tick()
+
+
+                cd
+
+----------------------------------------------------                 

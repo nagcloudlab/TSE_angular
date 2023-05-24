@@ -1,0 +1,35 @@
+<div class="container">
+
+
+    <hr />
+    <div>Events - click, submit, …</div>
+    <hr />
+    <button (click)="changeMessage()" class="btn btn-lg btn-dark">Change Message</button>
+    <div class="d-flex justify-content-around">
+        <div class="font-monospace">{{message}}</div>
+    </div>
+    <hr />
+
+
+    <hr />
+    <div>XHR - Fetching data from a remote server</div>
+    <hr />
+    <button (click)="loadTodos()" class="btn btn-lg btn-dark">Load Todos</button>
+    <div class="d-flex justify-content-around">
+        <pre>
+        {{todos | json}}
+      </pre>
+    </div>
+    <hr />
+
+
+    <hr />
+    <div>Timers - setTimeout(), setInterval()</div>
+    <hr />
+    <button (click)="startTimer()" class="btn btn-lg btn-dark">Start Timer</button>
+    <div class="d-flex justify-content-around">
+        {{time}}
+    </div>
+
+
+</div>

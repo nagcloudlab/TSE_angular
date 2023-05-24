@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from './on-push-change-detection-observables.module';\nexport * from './on-push-change-detection-observables.component';","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

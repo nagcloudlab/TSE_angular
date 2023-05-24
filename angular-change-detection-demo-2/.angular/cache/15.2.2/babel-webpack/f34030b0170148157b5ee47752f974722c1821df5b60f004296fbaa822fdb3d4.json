@@ -1,0 +1,1 @@
+{"ast":null,"code":"export function toggleClass(el, zone, className = 'checked') {\n  const a = el.nativeElement.querySelector('a');\n  a.classList.add(className);\n  zone.runOutsideAngular(() => {\n    setTimeout(() => {\n      a.classList.remove(className);\n    }, 2000);\n  });\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

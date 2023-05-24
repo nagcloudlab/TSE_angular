@@ -3,5 +3,460 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "1-ng-basic-animation": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/1-ng-basic-animation",
+      "sourceRoot": "projects/1-ng-basic-animation/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/1-ng-basic-animation",
+            "index": "projects/1-ng-basic-animation/src/index.html",
+            "main": "projects/1-ng-basic-animation/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/1-ng-basic-animation/tsconfig.app.json",
+            "assets": [
+              "projects/1-ng-basic-animation/src/favicon.ico",
+              "projects/1-ng-basic-animation/src/assets"
+            ],
+            "styles": [
+              "projects/1-ng-basic-animation/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "1-ng-basic-animation:build:production"
+            },
+            "development": {
+              "browserTarget": "1-ng-basic-animation:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "1-ng-basic-animation:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/1-ng-basic-animation/tsconfig.spec.json",
+            "assets": [
+              "projects/1-ng-basic-animation/src/favicon.ico",
+              "projects/1-ng-basic-animation/src/assets"
+            ],
+            "styles": [
+              "projects/1-ng-basic-animation/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "2-ng-multi-state-animations": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/2-ng-multi-state-animations",
+      "sourceRoot": "projects/2-ng-multi-state-animations/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/2-ng-multi-state-animations",
+            "index": "projects/2-ng-multi-state-animations/src/index.html",
+            "main": "projects/2-ng-multi-state-animations/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/2-ng-multi-state-animations/tsconfig.app.json",
+            "assets": [
+              "projects/2-ng-multi-state-animations/src/favicon.ico",
+              "projects/2-ng-multi-state-animations/src/assets"
+            ],
+            "styles": [
+              "projects/2-ng-multi-state-animations/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "2-ng-multi-state-animations:build:production"
+            },
+            "development": {
+              "browserTarget": "2-ng-multi-state-animations:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "2-ng-multi-state-animations:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/2-ng-multi-state-animations/tsconfig.spec.json",
+            "assets": [
+              "projects/2-ng-multi-state-animations/src/favicon.ico",
+              "projects/2-ng-multi-state-animations/src/assets"
+            ],
+            "styles": [
+              "projects/2-ng-multi-state-animations/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "3-animations-using-keyframes": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/3-animations-using-keyframes",
+      "sourceRoot": "projects/3-animations-using-keyframes/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/3-animations-using-keyframes",
+            "index": "projects/3-animations-using-keyframes/src/index.html",
+            "main": "projects/3-animations-using-keyframes/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/3-animations-using-keyframes/tsconfig.app.json",
+            "assets": [
+              "projects/3-animations-using-keyframes/src/favicon.ico",
+              "projects/3-animations-using-keyframes/src/assets"
+            ],
+            "styles": [
+              "projects/3-animations-using-keyframes/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "3-animations-using-keyframes:build:production"
+            },
+            "development": {
+              "browserTarget": "3-animations-using-keyframes:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "3-animations-using-keyframes:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/3-animations-using-keyframes/tsconfig.spec.json",
+            "assets": [
+              "projects/3-animations-using-keyframes/src/favicon.ico",
+              "projects/3-animations-using-keyframes/src/assets"
+            ],
+            "styles": [
+              "projects/3-animations-using-keyframes/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "4-animating-lists": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/4-animating-lists",
+      "sourceRoot": "projects/4-animating-lists/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/4-animating-lists",
+            "index": "projects/4-animating-lists/src/index.html",
+            "main": "projects/4-animating-lists/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/4-animating-lists/tsconfig.app.json",
+            "assets": [
+              "projects/4-animating-lists/src/favicon.ico",
+              "projects/4-animating-lists/src/assets"
+            ],
+            "styles": [
+              "projects/4-animating-lists/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "4-animating-lists:build:production"
+            },
+            "development": {
+              "browserTarget": "4-animating-lists:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "4-animating-lists:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/4-animating-lists/tsconfig.spec.json",
+            "assets": [
+              "projects/4-animating-lists/src/favicon.ico",
+              "projects/4-animating-lists/src/assets"
+            ],
+            "styles": [
+              "projects/4-animating-lists/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "5-complex-route-animations": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/5-complex-route-animations",
+      "sourceRoot": "projects/5-complex-route-animations/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/5-complex-route-animations",
+            "index": "projects/5-complex-route-animations/src/index.html",
+            "main": "projects/5-complex-route-animations/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/5-complex-route-animations/tsconfig.app.json",
+            "assets": [
+              "projects/5-complex-route-animations/src/favicon.ico",
+              "projects/5-complex-route-animations/src/assets"
+            ],
+            "styles": [
+              "projects/5-complex-route-animations/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "5-complex-route-animations:build:production"
+            },
+            "development": {
+              "browserTarget": "5-complex-route-animations:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "5-complex-route-animations:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/5-complex-route-animations/tsconfig.spec.json",
+            "assets": [
+              "projects/5-complex-route-animations/src/favicon.ico",
+              "projects/5-complex-route-animations/src/assets"
+            ],
+            "styles": [
+              "projects/5-complex-route-animations/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
   }
 }

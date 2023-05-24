@@ -5,17 +5,20 @@ const observable = new Subject();
 let i = 0;
 let interval = setInterval(() => {
   i++;
+
   if (i === 10) {
     observable.complete();
     clearInterval(interval);
     return;
   }
+
   // if (i === 5) {
   //   const err = new Error("error");
   //   observable.error(err);
   //  clearInterval(interval);
   //  return;
   // }
+
   observable.next(i);
 }, 1000);
 

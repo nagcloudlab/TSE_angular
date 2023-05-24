@@ -1,0 +1,20 @@
+<div class="card card-body bg-warning" [ngClass]="toggleClass">
+
+    <app-navbar></app-navbar>
+
+    <div class="d-flex">
+        <button (click)="triggerChange()" class="btn btn-lg btn-dark">trigger change</button>
+        &nbsp;
+        <button (click)="buy()" class="btn btn-lg btn-dark">buy item</button>
+    </div>
+    <br />
+    Component Root
+    <ul>
+        <li *ngFor="let item of arr">{{item}}</li>
+    </ul>
+    <div class="d-flex justify-content-around">
+        <app-comp-one></app-comp-one>
+        <app-comp-two></app-comp-two>
+        <app-cart-badge [addItemStream]="addItemStream"></app-cart-badge>
+    </div>
+</div>
