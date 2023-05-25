@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let votingLine of votingLines$ | async">
+                    <td>{{votingLine.item}}</td>
+                    <td>{{votingLine.likes}}</td>
+                    <td>{{votingLine.dislikes}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

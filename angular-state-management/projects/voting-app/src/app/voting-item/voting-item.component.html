@@ -1,0 +1,12 @@
+<div class="card" style="width: 200px;">
+    <div class="card-body">
+        <div>
+            <span>{{item}} - {{votes$|async}}</span>
+            <hr />
+            <div class="d-flex justify-content-around">
+                <button (click)="handleLike($event)" class="btn btn-primary">Like</button>
+                <button (click)="handleDislike($event)" class="btn btn-danger">Dislike</button>
+            </div>
+        </div>
+    </div>
+</div>

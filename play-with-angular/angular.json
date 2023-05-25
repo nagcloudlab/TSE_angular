@@ -457,6 +457,97 @@
           }
         }
       }
+    },
+    "change-detection": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/change-detection",
+      "sourceRoot": "projects/change-detection/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/change-detection",
+            "index": "projects/change-detection/src/index.html",
+            "main": "projects/change-detection/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/change-detection/tsconfig.app.json",
+            "assets": [
+              "projects/change-detection/src/favicon.ico",
+              "projects/change-detection/src/assets"
+            ],
+            "styles": [
+              "projects/change-detection/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "change-detection:build:production"
+            },
+            "development": {
+              "browserTarget": "change-detection:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "change-detection:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/change-detection/tsconfig.spec.json",
+            "assets": [
+              "projects/change-detection/src/favicon.ico",
+              "projects/change-detection/src/assets"
+            ],
+            "styles": [
+              "projects/change-detection/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   }
 }

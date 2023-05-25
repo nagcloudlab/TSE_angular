@@ -1,0 +1,43 @@
+<div class="container">
+  <app-navbar></app-navbar>
+
+  <app-cart-badge></app-cart-badge>
+
+  <app-box [value]="myName"></app-box>
+
+  <div class="card">
+    <div class="card-header">Progress Count</div>
+    <div class="card-body">
+      {{progressCount}}
+      <hr />
+      <button class="btn btn-primary" (click)="startProgress()">Start Progress</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Event(s)</div>
+    <div class="card-body">
+      {{myName}}
+      <hr />
+      <button class="btn btn-primary" (click)="changeName()">Change Name</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Timer</div>
+    <div class="card-body">
+      {{timeNow}}
+      <hr />
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">API call</div>
+    <div class="card-body">
+      {{todos|json}}
+      <hr />
+      <button class="btn btn-primary" (click)="getTodos()">Get Todos</button>
+    </div>
+  </div>
+
+</div>

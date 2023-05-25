@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-body">
+        <hr />
+        <div *ngIf="user$ | async as user">
+            {{user.name}}
+        </div>
+        <hr />
+        <div *ngIf="votingLinesCount$ | async as linesCount">
+            {{linesCount}}
+        </div>
+        <hr />
+        <div class="d-flex justify-content-around">
+            <app-voting-item item="Angular"></app-voting-item>
+            <app-voting-item item="React"></app-voting-item>
+        </div>
+        <hr />
+        <app-voting-table></app-voting-table>
+    </div>
+</div>
